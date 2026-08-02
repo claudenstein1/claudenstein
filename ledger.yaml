@@ -1,0 +1,51 @@
+meta:
+  schema_version: 1
+  created: 2026-08-02
+
+# Measured capability results, human-written only (genome rule 14).
+# Each entry:
+#   - metric: repeatability_mm | payload_g | backlash_deg | print_dim_error_mm | ...
+#     value:
+#     method:        # reference to the measurement procedure used
+#     artifact:      # designs/<dir> that achieved it
+#     date:
+#     result:        # results/NNN-...
+capabilities: []
+
+# Per-metric weights and normalisation references for the Capability score.
+# Genome-level (rule 1): human-merge only, each change with a documented rationale.
+# Each entry:
+#   - metric: payload_g
+#     direction: higher_is_better | lower_is_better
+#     ref: {worst: <raw value scoring 0.0>, best: <raw value scoring 1.0>}
+#     weight: <float>
+#     rationale: <why this weight>
+capability_weights: []
+
+# Independence rungs: human | assisted | autonomous
+independence:
+  specify:      human
+  design:       human
+  manufacture:  human
+  assemble:     human
+  install:      human
+  order_parts:  human
+  finance:      human   # human = base_cap funds all; assisted = revenue offsets; autonomous = revenue >= cap
+
+resources:
+  base_cap_nzd: 50                 # human out-of-pocket floor, Frog-set; validation fails on null
+  reinvestment_fraction: 0.9       # f in cap formula, Frog-set; validation fails on null
+  cap_ceiling_nzd: 1000            # hard limit, human-set only, Frog-set; validation fails on null
+  revenue_trailing_window_cycles: 3
+  # Per-cycle revenue entries, human-written only (rules 16, 18):
+  #   cash:    {cycle, kind: cash, amount_nzd, source, date}
+  #   in-kind: {cycle, kind: in_kind, market_value_nzd (optional), source, date}
+  # Only cash entries feed the cap formula.
+  revenue: []
+  spend_total_nzd: 0
+  cycles_completed: 0
+  stock:
+    plate_6061: []                 # thicknesses in mm, TBC on request
+    filament: [PETG, ASA]
+    fasteners: [M3 SHCS]
+    vitamins: []                   # declared motors/bearings/boards as acquired

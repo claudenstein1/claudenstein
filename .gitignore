@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Emitted build artifacts (reproducible from source, genome rule 10)
+designs/**/*.stl
+designs/**/*.step
+designs/**/*.stp

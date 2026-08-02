@@ -1,0 +1,14 @@
+[project]
+name = "claudenstein"
+version = "0.1.0"
+description = "Self-improving robotics harness - generation 0"
+requires-python = ">=3.11"
+dependencies = [
+    "build123d",
+    "pyyaml",
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["harness/tests"]

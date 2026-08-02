@@ -9,8 +9,11 @@ objective. These instructions are operational; the genome governs.
 Read, in this order:
 
 1. `genome.md` - the rules and objective.
-2. `ledger.yaml` - current capabilities, independence rungs, resources, stock.
-3. The most recent entries in `results/` - what actually happened last cycle.
+2. `docs/status.md` - current state, decision log, and open items. This repo is
+   the complete state; if you are picking up cold on a fresh machine or account,
+   everything you need is in the repo, and this file orients you.
+3. `ledger.yaml` - current capabilities, independence rungs, resources, stock.
+4. The most recent entries in `results/` - what actually happened last cycle.
 
 ## The cycle
 

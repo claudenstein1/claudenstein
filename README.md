@@ -17,12 +17,15 @@ produced by the system, not committed here.
   `validate_geometry.py`, and tests.
 - `proposals/`, `designs/`, `results/` - one entry per cycle.
 - `docs/bootstrap-spec.md` - the original build specification.
+- `docs/status.md` - current state, decision log, open items (read this first
+  when picking up the project).
+- `docs/setup.md` - how to set up on a fresh host.
 
 ## Running
 
 ```
 python -m venv .venv && .venv/Scripts/activate   # Windows; use bin/activate on POSIX
-pip install -e .                                  # installs build123d, pyyaml, pytest
+pip install -e .                                  # core: pyyaml, pytest
 make validate
 ```
 
@@ -30,7 +33,9 @@ make validate
 (`--pre-cycle` when no proposal exists), and the test suite. A cycle is not
 complete until it is green.
 
-Geometry tests require `build123d`; they are skipped if it is not installed.
+build123d is an optional extra (`pip install -e .[cad]`), deferred until a cycle
+commits a design. Geometry tests are skipped when it is not installed, and
+`make validate` is green without it. Full fresh-host setup: `docs/setup.md`.
 
 ## Execution environment
 
